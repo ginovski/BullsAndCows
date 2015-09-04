@@ -35,5 +35,15 @@ public class GameTest {
 		assertEquals(1, newGame.getCows());
 		assertEquals(2, newGame.getBulls());
 	}
+	
+	@Test
+	public void testIf0DigitsAreOnRightPlacesShouldHave0BullsAnd0Cows() {
+		Game newGame = new Game(new NotRandomNumberGenerator());
+
+		newGame.guess(new int[] { 3, 5, 8, 9 });
+		
+		assertEquals(0, newGame.getCows());
+		assertEquals(0, newGame.getBulls());
+	}
 
 }
